@@ -16,6 +16,11 @@ result <- unlist(lapply(vec, function(x) { x^2 }))
 > result
 [1]  1  4  9 16 25
 ```
+Note that this is a made-up example just to illustrate `lapply`. This specific calculation is R is simply
+```r
+> vec^2
+[1]  1  4  9 16 25
+```
 
 ### Python
 ```python
