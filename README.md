@@ -6,12 +6,12 @@ Making transitioning from R to Python easier.
 ### R
 ```r
 # This is really a vector, but is treated as a list
-lst <- c(1, 2, 3, 4, 5)
-result <- lapply(lst, function(x) { x^2 })
+vec <- c(1, 2, 3, 4, 5)
+result <- lapply(vec, function(x) { x^2 })
 ```
 To convert the result back to vector, one could use `sapply` or simply `unlist` the result.
 ```r
-result <- unlist(lapply(lst, function(x) { x^2 }))
+result <- unlist(lapply(vec, function(x) { x^2 }))
 
 > result
 [1]  1  4  9 16 25
@@ -19,10 +19,10 @@ result <- unlist(lapply(lst, function(x) { x^2 }))
 
 ### Python
 ```python
-lst = [1, 2, 3, 4, 5]
+vec = [1, 2, 3, 4, 5]
 def square(x):
     return x * x
-result = map(square, lst)
+result = map(square, vec)
 
 >>> result
 [1, 4, 9, 16, 25]
@@ -62,4 +62,20 @@ In R, a column `mycol` in a dataframe `df` can be addressed as `df$mycol` or `df
 \[Is there a better way?\]
 ```python
 col = df['mycol'].tolist()
+```
+
+## Print the first few rows of a dataframe
+
+In R, use `head(df)`. In Python, use `df.head()`.
+
+## Add a column to a dataframe
+
+### R
+```r
+df$newcol <- vec
+```
+
+### Python
+```python
+df = df.assign(newcol=pd.Series(vec).values)
 ```
