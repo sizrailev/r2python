@@ -28,3 +28,27 @@ result = map(square, lst)
 [1, 4, 9, 16, 25]
 ```
 
+## Read a csv file
+
+### R
+```r
+df <- read.csv("myfile.csv", stringsAsFactors = FALSE, sep = ",")
+```
+
+### Python
+```python
+import pandas as pd
+df = pd.read_csv('myfile.csv', sep=',')
+```
+
+## Get dataframe's column names.
+
+### R
+```r
+names(df)
+```
+
+### Python
+```python
+list(df)
+```
