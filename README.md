@@ -81,6 +81,13 @@ df$newcol <- vec
 ```
 
 ### Python
+To add a simple list as a column, the following will work:
+```python
+df['newcol'] = vec
+# or
+df = df.assign(newcol=vec)
+```
+However, when assigning `Series`, which has an index, a simple assignment won't always work because indices of the `Series` and the `DataFrame` may not match, which results in `NaN`s. Then, the `assign` function does the job.
 ```python
 df = df.assign(newcol=pd.Series(vec).values)
 ```
