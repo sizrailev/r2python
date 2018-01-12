@@ -52,3 +52,14 @@ names(df)
 ```python
 list(df)
 ```
+
+## Work with a dataframe's column
+
+### R
+In R, a column `mycol` in a dataframe `df` can be addressed as `df$mycol` or `df[["mycol"]]`. The latter takes advantage of the fact that an R dataframe is a `list` of named columns of different type. A `list` also behaves as a dictionary, when elements are named, as it is in the case of a dataframe. The double square brackets address the list element using the key `"mycol"`. 
+
+### Python
+\[Is there a better way?\]
+```python
+col = df['mycol'].tolist()
+```
