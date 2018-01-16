@@ -25,13 +25,22 @@ Note that this is a made-up example just to illustrate `lapply`. This specific c
 ### Python
 ```python
 vec = [1, 2, 3, 4, 5]
+
+# Using map with a defined function
 def square(x):
     return x * x
 result = map(square, vec)
 
+# Using list comprehension (preferred)
+result = [x * x for x in vec]
+
+# Using map with a lambda function (PyLint will complain)
+result = map(lambda x: x * x, vec)
+
 >>> result
 [1, 4, 9, 16, 25]
 ```
+See [this article](https://stackoverflow.com/questions/1247486/python-list-comprehension-vs-map) for details.
 
 ## Read a csv file
 
