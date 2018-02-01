@@ -100,3 +100,22 @@ However, when assigning `Series`, which has an index, a simple assignment won't 
 ```python
 df = df.assign(newcol=pd.Series(vec).values)
 ```
+
+## Concatenate two dataframes 
+We want to merge two data frames with the same number and type of columns:
+```
+df1[nrows1, ncols] + df2[nrows2, ncols] -> df3[nrows1 + nrows2, ncols]
+```
+### R
+```r
+df <- rbind(df1, df2)
+```
+
+### Python
+In python, create a list of dataframes and use `panda`'s `concat` function.
+```python
+import pandas as pd
+pd.concat([df1, df2])
+```
+
+
