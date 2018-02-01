@@ -118,4 +118,19 @@ import pandas as pd
 pd.concat([df1, df2])
 ```
 
+## Iterate over a dataframe's rows
+
+### R
+```r
+for (i in 1:nrow(df)) { 
+    print( df[i, c('col1', 'col2', 'col3')] )
+}
+```
+A potentially better way without a loop would be to use `apply()` or `lapply()`.
+
+### Python
+```python
+for row in df.itertuples():
+    print(row.col1, row.col2, row.col3)
+```
 
