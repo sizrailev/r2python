@@ -42,6 +42,11 @@ result = map(lambda x: x * x, vec)
 ```
 See [this article](https://stackoverflow.com/questions/1247486/python-list-comprehension-vs-map) for details.
 
+To apply a function to values in a **dictionary** ([reference](https://stackoverflow.com/questions/13063691/applying-a-function-to-values-in-dict)):
+```python
+d2 = {k: f(v) for k, v in d1.items()}
+```
+
 ## Read a csv file
 
 ### R
